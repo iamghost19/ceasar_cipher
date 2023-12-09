@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Caesar Cipher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="number"] {
+            width: 250px;
+            margin-bottom: 10px;
+            padding: 5px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Caesar Cipher</h1>
+    <form method="post">
+        <label for="text">Enter Text:</label>
+        <input type="text" id="text" name="text" required><br>
+        <label for="shift">Shift (0-25):</label>
+        <input type="number" id="shift" name="shift" min="0" max="25" required><br>
+        <label for="operation">Select Operation:</label>
+        <select id="operation" name="operation">
+            <option value="encrypt">Encrypt</option>
+            <option value="decrypt">Decrypt</option>
+        </select><br>
+        <label for="shift_direction">Select Shift Direction:</label>
+        <select id="shift_direction" name="shift_direction">
+            <option value="right">Right</option>
+            <option value="left">Left</option>
+        </select><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if result %}
+    <h2>Result:</h2>
+    <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
